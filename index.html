@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="Accent-Emotion Entanglement in LM-Based TTS Synthesis - Matt Hayden">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="This project presents and investigates a brand new phenomenon, accent-emotion entanglement. Accent-Emotion entanglement is defined as accent hallucination caused by emotional input to a TTS system. This issue highlights the unpredicability that can arise from massive, feature-packed models, particularly those that are evaluated insufficiently. Additionally, it reaffirms the need for transparency and clarity in dataset makeup and description.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="TTS, emotional TTS, accented TTS, machine learning, AI, CosyVoice, accent hallucination, TTS evaluation">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Matt Hayden">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="University of Edinburgh">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="Accent-Emotion Entanglement in LM-Based TTS Synthesis">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="This project presents and investigates a brand new phenomenon, accent-emotion entanglement. Accent-Emotion entanglement is defined as accent hallucination caused by emotional input to a TTS system. This issue highlights the unpredicability that can arise from massive, feature-packed models, particularly those that are evaluated insufficiently. Additionally, it reaffirms the need for transparency and clarity in dataset makeup and description.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="MattHayden23.github.io">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Accent-Emotion Entanglement in LM-Based TTS Synthesis">
+  <meta name="citation_author" content="Matt, Hayden">
+  <meta name="citation_publication_date" content="2025">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>Accent-Emotion Entanglement in LM-Based TTS Synthesis - Matt Hayden | Academic Research</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Accent-Emotion Entanglement in LM-Based TTS Synthesis",
+    "description": "This project presents and investigates a brand new phenomenon, accent-emotion entanglement. Accent-Emotion entanglement is defined as accent hallucination caused by emotional input to a TTS system. This issue highlights the unpredicability that can arise from massive, feature-packed models, particularly those that are evaluated insufficiently. Additionally, it reaffirms the need for transparency and clarity in dataset makeup and description.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Matt Hayden",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of Edinburgh"
+        }
+      }
+    ],
+    "datePublished": "2025-08-14",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dissertation"
+    },
+    "url": "MattHayden23.github.io",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["TTS", "emotional TTS", "accented TTS", "machine learning", "AI", "CosyVoice", "accent hallucination", "TTS evaluation"],
+    "abstract": "Many zero-shot TTS systems now claim to produce near-human quality imitations of speech. However, the recent growth in features and the rush to report state-of-the-art results can lead to unexpected issues slipping through the cracks. This paper investigates such an issue, a new phenomenon dubbed accent-emotion entanglement. It is found that, in CosyVoice 2 <a href="https://arxiv.org/abs/2412.10117">(Du et al, 2024)</a>, an instruction-based zero-shot TTS system, accent hallucination is caused and guided by the emotion of the input provided to the model. A similar zero-shot model, MaskGCT <a href="https://arxiv.org/abs/2409.00750">(Wang et al, 2024)</a>, does not produce the same results. The paper also discusses the importance of subjective results in evaluation as a means to avoiding future unexpected issues.",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "MattHayden23.github.io"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "TTS"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Accent Hallucination"
+      },
+      {
+        "@type": "Thing",
+        "name": "Accented TTS"
+      },
+      {
+        "@type": "Thing":
+        "name": "Emotional TTS"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">Accent-Emotion Entanglement in LM-Based TTS Synthesis</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/matthayden23" target="_blank">Matt Hayden,</a></span>
+				<span class="author-block">
+				<a href="https://www.linkedin.com/in/jinzuomu-zhong/" target="_blank">Jinzuomu Zhong<sup>*</sup>,</a></span>
+				<span class="author-block">
+				<a href="https://www.linkedin.com/in/korinrichmond/" target="_blank">Korin Richmond<sup>*</sup></a></span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block">University of Edinburgh<br>Master's Dissertation, 2025</span>
+					<span class="eql-cntrb">
+						<small>
+							<br>
+							<sup>*</sup>
+							Supervisors
+						</small>
+					</span>
+                  </div>
+<!--
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> 
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+		<figure>
+			<br>
+			<img src="images/header_image.png" alt="M012 UMAP plot" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
+			<figcaption>We discover and analyse a new type of accent hallucination in CosyVoice 2 <a href="https://arxiv.org/abs/2412.10117">(Du et al, 2024)</a> dubbed accent-emotion entanglement. In accent-emotion entanglement, the nature of the hallucinated accent is determined by the emotion of the input (reference speech and instruction) provided to CosyVoice 2. Angry input, for example, results in different accents to happy or neutral input. This has consequences, not only for the performance of the TTS system itself, but also for how TTS systems ought to be evaluated in order to avoid such phenomena in the future.</figcaption>
+		</figure>
+	  </div>
+	</div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Many zero-shot TTS systems now claim to produce near-human quality imitations of speech. However, the recent growth in features and the rush to report state-of-the-art results can lead to unexpected issues slipping through the cracks. This paper investigates such an issue, a new phenomenon dubbed accent-emotion entanglement. It is found that, in CosyVoice 2 <a href="https://arxiv.org/abs/2412.10117">(Du et al, 2024)</a>, an instruction-based zero-shot TTS system, accent hallucination is caused and guided by the emotion of the input provided to the model. A similar zero-shot model, MaskGCT <a href="https://arxiv.org/abs/2409.00750">(Wang et al, 2024)</a>, does not produce the same results. The paper also discusses the importance of subjective results in evaluation as a means to avoiding future unexpected issues.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">
+			Subjective Results
+		</h2>
+	  </div>
+	</div>
+  </div>
+</section>
+
+		  
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+		<figure>
+			<br>
+			<img src="images/list_test_plot.png" alt="Listening Test Accent Results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
+			<figcaption><i>Comparion of average accent SMOS scores for CosyVoice 2 and MaskGCT. Based on listening test with 29 participants using a 1-5 scale.</i></figcaption>
+		</figure>
+		<p>
+			<br><br>To both quantify accent-emotion entanglement and validate its existence, a listening test was conducted. 29 participants were asked to rate the similarity between a synthesised utterance and the ground truth (taken from the MEAD dataset <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>) exclusively considering accent.
+			The reference speech provided to each TTS system matched the ground truth in speaker and emotion. CosyVoice 2 accepts fine-tuned instructions where MaskGCT does not. For the happy/angry condition, the instruction given was 'Make this sound angry/happy'. For neutral utterances no instruction was given.
+			The rating system used a 1-5 scale, with lower scores representing lesser similarity. The results of this test are shown in the table below and are visualised above 
+		</p>
+	  	<p>
+			<div style="overflow-x: auto; display: flex; justify-content: center;">
+				<table class="table table-hover pt-2"
+					style="max-width: 100%; border-collapse: collapse; background-color:#f8f9fc; border-bottom: 2px solid #dbdbdb; ">
+					
+					<thead>
+						<tr>
+							<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>System</b></td>
+							<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>Emotion</b></td>
+							<th style="vertical-align : middle;text-align: center;" colspan= "5"><b>Accent SMOS Scores by Target Text</b></th>
+						</tr>
+						<tr>
+							<th style="vertical-align : middle;text-align: center"><b>021</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>022</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>023</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>026</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>027</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>CosyVoice 2</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">1.33 <sub>± 1.03</sub></td>
+							<td style="vertical-align : middle;text-align: center"><b>3.54 <sub>± 1.2</sub></b></td>
+							<td style="vertical-align : middle;text-align: center"><b>3.04 <sub>± 1.35</sub></b></td>
+							<td style="vertical-align : middle;text-align: center"><i>1.25 <sub>± 0.86</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>2.63 <sub>± 1.24</sub></i></td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center"><i>1.17 <sub>± 0.49</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>1.42 <sub>± 0.79</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>1.21 <sub>± 0.85</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>1.25 <sub>± 0.85</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><b>4.13 <sub>± 1.06</sub></b></td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>4.13 <sub>± 0.87</sub></b></td>
+							<td style="vertical-align : middle;text-align: center">1.67 <sub>± 1.03</sub></td>
+							<td style="vertical-align : middle;text-align: center">1.75 <sub>± 1.01</sub></td>
+							<td style="vertical-align : middle;text-align: center"><b>2.04 <sub>± 1.35</sub></b></td>
+							<td style="vertical-align : middle;text-align: center">4.00 <sub>± 0.85</sub></td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>MaskGCT</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.75 <sub>± 1.14</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.33 <sub>± 1.18</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.75 <sub>± 1.01</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.92 <sub>± 1.2</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><b>4.13 <sub>± 0.9</sub></b></td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">3.79 <sub>± 1.2</sub></td>
+							<td style="vertical-align : middle;text-align: center"><b>4.04 <sub>± 1.15</sub></b></td>
+							<td style="vertical-align : middle;text-align: center">3.79 <sub>± 0.8</sub></td>
+							<td style="vertical-align : middle;text-align: center">3.5 <sub>± 1.04</sub></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.83 <sub>± 1.07</sub></i></td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>4.33 <sub>± 0.78</sub></b></td>
+							<td style="vertical-align : middle;text-align: center">3.96 <sub>± 0.71</sub></td>
+							<td style="vertical-align : middle;text-align: center"><b>3.83 <sub>± 1.07</sub></b></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.42 <sub>± 0.78</sub></i></td>
+							<td style="vertical-align : middle;text-align: center"><i>3.83 <sub>± 1.03</sub></i></td>
+						</tr>
+					</tbody>
+					<caption style="caption-side: bottom;"><i>Accent Similarity Mean Opinion Scores (SMOS) between CosyVoice 2/MaskGCT utterances and the ground truth from 30 participants. Bold represents the highest scoring emotion for that system and utterance, italics the lowest. Utteranece numbers are based on those in the MEAD dataset <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>.</i></caption>
+				</table>
+			</div>
+		</p>
+		<p>
+			<br>These results confirmed that CosyVoice 2 often fails to accurately represent the accent of the reference speaker. Happy utterances seemed particularly prone to accent hallucination, with an average SMOS of just 1.84. All 3 emotions though saw low scoring utterances suggesting that accent hallucination was not only caused by certain emotions.
+			Instead, listening to the utterances revealed that nature of the accent hallucination did seem to be guided by the emotion of the input. A selection of the utterances used in the listening test can be heard at the bottom of the page while a preview of the listening test can be seen <a href="https://edinburgh.eu.qualtrics.com/jfe/preview/previewId/78f18236-4601-4273-a736-169153040af5/SV_0D4WFRBRpKhCe1M?Q_CHL=preview&Q_SurveyVersionID=current"><u>here</u></a>.
+		</p>
+	  </div>
+	</div>
+  </div>
+</section>
+
+
+	  
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">
+			Objective Results
+		</h2>
+	  </div>
+	</div>
+  </div>
+</section>
+	  
+
+<section class="hero is-small">
+	<!-- Image carousel -->
+	<div class="hero-body">
+		<div class="container">
+			<div id="results-carousel" class="carousel results-carousel">
+				<div class="item">
+					<!-- TODO: Replace with your research result images -->
+					<img src="images/M007.png" alt="First research result visualization" loading="lazy"/>
+					<!-- TODO: Replace with description of this result -->
+					<h2 class="subtitle has-text-centered">
+					  UMAP plots for speaker M007 (male) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
+					</h2>
+				  </div>
+				  <div class="item">
+					<!-- Your image here -->
+					<img src="images/M012.png" alt="Second research result visualization" loading="lazy"/>
+					<h2 class="subtitle has-text-centered">
+					  UMAP plots for speaker M012 (male) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
+					</h2>
+				  </div>
+				  <div class="item">
+					<!-- Your image here -->
+					<img src="images/W018.png" alt="Third research result visualization" loading="lazy"/>
+					<h2 class="subtitle has-text-centered">
+					UMAP plots for speaker W018 (female) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
+					</h2>
+				 </div>
+				 <div class="item">
+				  <!-- Your image here -->
+				  <img src="images/W033.png" alt="Fourth research result visualization" loading="lazy"/>
+				  <h2 class="subtitle has-text-centered">
+					UMAP plots for speaker W033 (female) in the MEAD database, <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>), showing how accents cluster for utterances with different emotions. Points represent utterance accent embeddings derived from GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, reduced to 2 dimensions. Ground truth accent points are included from the CommonAccent, <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a>, and VCTK, <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a>, databases. 
+				  </h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End image carousel -->
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <p>
+			To further investigate the nature of the issues in CosyVoice 2 and to establish the existence of accent-emotion entanglement over random accent hallucination, sythesised utterances were analysed using a selection of objective metrics. 100 utterances were synthesised for each emotion (angry/happy/neutral), target text (5 total), speaker (2 male, 2 female) and system (CosyVoice 2 and MaskGCT). 
+			Each utterance was then passed through an accent recognition system, GenAID <a href="https://www.arxiv.org/abs/2409.09098">(Zhong et al, 2025)</a>, to produce accent embeddings. These embeddings can be seen in the graphs above, reduced to 2 dimensions through UMAP projection. Ground truth accents were taken from the VCTK <a href="https://datashare.ed.ac.uk/handle/10283/3443">(Yamagishi et al, 2020)</a> and CommonAccent <a href="https://arxiv.org/abs/2305.18283">(Zuluaga-Gomez et al, 2023)</a> databases to provide context.
+			These visualisations support the listening test resutls and show how the emotion of the input provided to CosyVoice 2 impacts the accent of the output. While the majority of utterances have a General American accent, regardless of the accent of the reference speaker, clusters of outliers can be seen for each emotion. Many angry utterances, for example, are given African accents.
+			This does not occur for neutral input which instead sees a cluster of British-accented utterances. Where the accents of utterances produced by MaskGCT are generally close to their ground truth equivalent, CosyVoice 2 utterances follow a distinct, highly dispersed pattern regardless of reference speaker. This suggests that it is not exclusively some element of the reference speech that is leading to the accent hallucination.<br>
+		</p>
+		<p>
+			<br><br>
+			<div style="overflow-x: auto; display: flex; justify-content: center;">
+				<table class="table table-hover pt-2"
+					style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb; background-color: #f8f9fc;">
+					
+						<thead>
+						<tr>
+							<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>Speaker</b></td>
+							<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>Emotion</b></td>
+							<th style="vertical-align : middle;text-align: center;" colspan= "3"><b>Cosine Distance to Centroid</b></th>
+						</tr>
+						<tr>
+							<th style="vertical-align : middle;text-align: center"><b>Ground Truth</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>CosyVoice 2</b></th>
+							<th style="vertical-align : middle;text-align: center"><b>MaskGCT</b></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>M007</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.032</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.055</b></td>
+							<td style="vertical-align : middle;text-align: center">0.010</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.034</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.035</b></td>
+							<td style="vertical-align : middle;text-align: center">0.026</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>M012</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.019</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.038</b></td>
+							<td style="vertical-align : middle;text-align: center">0.014</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.014</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.058</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.016</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.033</b></td>
+							<td style="vertical-align : middle;text-align: center">0.013</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>W018</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.033</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.039</b></td>
+							<td style="vertical-align : middle;text-align: center">0.037</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.014</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.052</b></td>
+							<td style="vertical-align : middle;text-align: center">0.020</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.017</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.029</b></td>
+							<td style="vertical-align : middle;text-align: center">0.024</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center" rowspan= "3"><b>W033</b></td>
+							<td style="vertical-align : middle;text-align: center"><b>Angry</b></td>
+							<td style="vertical-align : middle;text-align: center">0.020</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.039</b></td>
+							<td style="vertical-align : middle;text-align: center">0.023</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Happy</b></td>
+							<td style="vertical-align : middle;text-align: center">0.028</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.054</b></td>
+							<td style="vertical-align : middle;text-align: center">0.029</td>
+						</tr>
+						<tr>
+							<td style="vertical-align : middle;text-align: center"><b>Neutral</b></td>
+							<td style="vertical-align : middle;text-align: center">0.019</td>
+							<td style="vertical-align : middle;text-align: center"><b>0.042</b></td>
+							<td style="vertical-align : middle;text-align: center">0.033</td>
+						</tr>
+					</tbody>
+					<caption style="caption-side: bottom;"><i>Average cosine distance between the accent embedding of an utterance and its centroid. Bold represents system with highest distance.</i></caption>
+				</table>
+			</div>
+		</p>
+		<p>
+			<br><br>The greater spread of CosyVoice 2 utterance accents is quantified in the table above. For every speaker and emotion, CosyVoice 2 utterances show the greatest average cosine distance from their respective centroid. CosyVoice 2 produces a wide variety of accents for each speaker and emotion. This aligns with the visualisations and the listening test results.
+			A key motivator for this project was to use a variety of evaluation metrics which come together to produce a clear picture of accent-emotion entanglement. The goal was for it to be clear what each metric captures and how they are grounded in human perception. Many systems now present results for metrics such as speaker similarity, handily captured in a single number for each condition. 
+			However, upon deeper analysis it is often not obvious what exactly these measures tell us. Can we truly capture speaker similarity in a single number? Evaluation through metrics which are either poorly described, under-utilised or overburdened does not paint the whole picture, leading to unexpected phenomena such as accent-emotion entanglement slipping through the cracks.
+		</p>
+	  </div>
+	</div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">
+			Impact on Emotion Realisation
+		</h2>
+	  </div>
+	</div>
+  </div>
+</section>
+	  
+<section class="hero is-small">
+	<!-- Image carousel -->
+	<div class="hero-body">
+		<div class="container">
+			<div class="columns is-centered">
+        		<div class="column is-full-mobile is-half-desktop">
+					<div id="results-carousel" class="carousel results-carousel">
+						<div class="item">
+							<!-- TODO: Replace with your research result images -->
+							<img src="images/emo_umap_M007.png" alt="First research result visualization" loading="lazy"/>
+							<!-- TODO: Replace with description of this result -->
+							<h2 class="subtitle has-text-centered">
+							  UMAP plots for speaker M007 (male) showing how emotional utterances cluster for CosyVoice 2 and MaskGCT. Points represent utterance emotion embeddings derived from emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a>, reduced to 2 dimensions. Ground truth points are included from the original speaker in the MEAD database <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>.
+							</h2>
+						  </div>
+						  <div class="item">
+							<!-- Your image here -->
+							<img src="images/emo_umap_M012.png" alt="Second research result visualization" loading="lazy"/>
+							<h2 class="subtitle has-text-centered">
+							  UMAP plots for speaker M012 (male) showing how emotional utterances cluster for CosyVoice 2 and MaskGCT. Points represent utterance emotion embeddings derived from emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a>, reduced to 2 dimensions. Ground truth points are included from the original speaker in the MEAD database <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>.
+							</h2>
+						  </div>
+						  <div class="item">
+							<!-- Your image here -->
+							<img src="images/emo_umap_W018.png" alt="Third research result visualization" loading="lazy"/>
+							<h2 class="subtitle has-text-centered">
+							 UMAP plots for speaker W018 (female) showing how emotional utterances cluster for CosyVoice 2 and MaskGCT. Points represent utterance emotion embeddings derived from emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a>, reduced to 2 dimensions. Ground truth points are included from the original speaker in the MEAD database <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>.
+						   </h2>
+						 </div>
+						 <div class="item">
+						  <!-- Your image here -->
+						  <img src="images/emo_umap_W033.png" alt="Fourth research result visualization" loading="lazy"/>
+						  <h2 class="subtitle has-text-centered">
+							UMAP plots for speaker W033 (female) showing how emotional utterances cluster for CosyVoice 2 and MaskGCT. Points represent utterance emotion embeddings derived from emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a>, reduced to 2 dimensions. Ground truth points are included from the original speaker in the MEAD database <a href="https://dl.acm.org/doi/10.1007/978-3-030-58589-1_42"> (Wang et al, 2020)</a>.
+						  </h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End image carousel -->
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <p>
+			In addition to studying the accent of each utterance, their emotion was also evaluated. This knowledge was key in determining the exact nature of the accent hallucination. Was accent in some way replacing the expected emotion or did they conincide? Analysis was conducted in much the same way as with accent. Each of the 100 utterances per condition were passed through emotion2vec <a href=https://arxiv.org/abs/2312.15185> (Ma et al. 2023) </a> to produce an emotion embedding.
+			These embeddings were then reduced in dimension through UMAP and plotted for each system. These visualisations can be seen above. Additionally, during the listening test, participants were asked to rate the similarity of a synthesised utterance's emotion to its ground truth equivalent, just as with accent. A summary of these results are shown in the table below.
+		</p>
+		<p>
+			<br><br>
+			<div style="overflow-x: auto; display: flex; justify-content: center;">
+				<table class="table table-hover pt-2"
+					style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb; background-color: #f8f9fc;">
+					
+						<thead>
+							<tr>
+								<th style="vertical-align : middle;text-align: center;" rowspan= "2"><b>System</b></td>
+								<th style="vertical-align : middle;text-align: center;" colspan= "3"><b>Average SMOS by Emotion</b></th>
+							</tr>
+							<tr>
+								<th style="vertical-align : middle;text-align: center;"><b>Angry</b></td>
+								<th style="vertical-align : middle;text-align: center;"><b>Happy</b></td>
+								<th style="vertical-align : middle;text-align: center;"><b>Neutral</b></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="vertical-align : middle;text-align: center"><b>CosyVoice 2</b></td>
+								<td style="vertical-align : middle;text-align: center">3.52 <sub>± 0.20</sub></td>
+								<td style="vertical-align : middle;text-align: center">3.13 <sub>± 0.80</sub></td>
+								<td style="vertical-align : middle;text-align: center">3.30 <sub>± 0.20</sub></td>
+							</tr>
+							<tr>
+								<td style="vertical-align : middle;text-align: center"><b>MaskGCT</b></td>
+								<td style="vertical-align : middle;text-align: center">2.58 <sub>± 0.95</sub></td>
+								<td style="vertical-align : middle;text-align: center">3.44 <sub>± 0.41</sub></td>
+								<td style="vertical-align : middle;text-align: center">2.53 <sub>± 0.69</sub></td>
+							</tr>
+							<tr>
+								<td style="vertical-align : middle;text-align: center; border-top: 3px solid black;"><b>p-value</b></td>
+								<td style="vertical-align : middle;text-align: center; border-top: 3px solid black;">0.062></td>
+								<td style="vertical-align : middle;text-align: center; border-top: 3px solid black;">0.46></td>
+								<td style="vertical-align : middle;text-align: center; border-top: 3px solid black;"><b>0.043</b></td>
+							</tr>
+						</tbody>
+					<caption style="caption-side: bottom;"><i>Emotion Similarity Mean Opinion Score for CosyVoice 2 and MaskGCT averaged across all utterances. P-value compares results across systems for the same emotion. Bold values indicate statistical significance (<i>p < 0.05 </i>).</i></caption>
+				</table>
+			</div>
+		</p>
+		<p>
+			<br>The visualisations align with listening test findings, showing that although performance is largely similar, CosyVoice 2 does slightly improve over MaskGCT in terms of percieved emotion similarity, particularly for neutral and angry utterances. This suggests that hallucinated accents aren't in some way replacing emotions during synthesis, instead the 2 features develop separately.
+			No significant correlation was found between accent and emotion SMOS scores for CosyVoice 2 utterances with a Pearson correlation of <i>r = 0.073</i>. MaskGCT does however see a weak positive correlation with a Pearson correlation of <i>r = 0.393</i>. This is likely due to deliberately poor utterances being chosen. Utterances were chosen for the listening test based on cosine similarity
+			between the accent embeddings of the synthesised utterance and the ground truth, with the lowest scoring utterances picked. Because there was little to no accent hallucination using MaskGCT low scoring sentences seem to be those which are more generally poor formed, e.g. they sounded robotic. Such utterances may also be likely to perform poorly on emotion similarity.
+			The key takeaway from these results is that the emotion of a CosyVoice 2 utterance is not impacted by accent hallucination. Accent-emotion hallucination only works one way.
+		</p>
+	  </div>
+	</div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">
+			Example Utterances
+		</h2>
+	  </div>
+	</div>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <p>
+			Below are a selection of the utterances, ground truth and synthesised, used in the listening test.
+		</p>
+	  </div>
+	</div>
+  </div>
+</section>
+	  
+    <div class="table-responsive pt-3">
+        <table class="table table-hover pt-2"
+			style="max-width: 100%; border-collapse: collapse; border-bottom: 2px solid #dbdbdb;">
+            <thead>
+            <tr>
+            <th style="vertical-align : middle;text-align: center;width:30%;">Transcription </th>
+            <th style="vertical-align : middle;text-align: center">Emotion </th>
+            <th style="vertical-align : middle;text-align: center">Ground Truth </th>
+            <th style="vertical-align : middle;text-align: center">CosyVoice 2</th>
+            <th style="vertical-align : middle;text-align: center">MaskGCT</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center; " rowspan="3">Todd placed top priority on getting his bike fixed.</td>
+                    <td style="vertical-align : middle;text-align:center;">Angry</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-021-Angry.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-021-Angry.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: "Make this sound angry."</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-021-Angry.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center;">Happy</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-021-Happy.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-021-Happy.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: "Make this sound happy."</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-021-Happy.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center;">Neutral</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-021-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-021-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: None Given</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-021-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center; " rowspan="3">His superiors had also preached this, saying it was the way for eternal honour.</td>
+                    <td style="vertical-align : middle;text-align:center;">Angry</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-026-Angry.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-026-Angry.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: "Make this sound angry."</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-026-Angry.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center;">Happy</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-026-Happy.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-026-Happy.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: "Make this sound happy."</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-026-Happy.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center;">Neutral</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-026-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-026-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: None Given</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-026-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center; " rowspan="3">I'll have a scoop of that exotic purple and turquoise sherbert.</td>
+                    <td style="vertical-align : middle;text-align:center;">Angry</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-023-Angry.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-023-Angry.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: "Make this sound angry."</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-023-Angry.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center;">Happy</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-023-Happy.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-023-Happy.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: "Make this sound happy."</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-023-Happy.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align : middle;text-align:center;">Neutral</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/GT-023-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/CV2-023-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio><br>Instruction: None Given</td>
+                    <td style="vertical-align : middle;text-align:center;"><audio controls="controls" style="width: 190px;"><source src="audios/MGCT-023-Neutral.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+</section>
+
+	<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Full PDF</h2>
+      <!-- TODO: Replace with your poster PDF -->
+      <embed src="/static/pdfs/dissertation.pdf" type="application/pdf" width="100%" height="550px" />
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+
+<!--
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
+  title={Your Paper Title Here},
+  author={First Author and Second Author and Third Author},
+  journal={Conference/Journal Name},
+  year={2024},
+  url={https://your-domain.com/your-project-page}
+}</code></pre>
+    </div>
+</section>
+-->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
+
